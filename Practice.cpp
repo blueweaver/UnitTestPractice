@@ -25,8 +25,7 @@ bool Practice::sortDescending(int & first, int & second, int & third)
     second = third;
     third = temp;
   }
-
-  if((first > second) && (second > third))
+  if((first >= second) && (second >= third))
   {
     return true;
   }
@@ -34,7 +33,6 @@ bool Practice::sortDescending(int & first, int & second, int & third)
   {
     return false;
   }
-
 }
 
 // Receive a string and return whether or not it is strictly a palindrome,
@@ -52,7 +50,7 @@ bool Practice::isPalindrome(string input)
   }
   for(unsigned int i=0; i < input.size()/2; i++)
   {
-    if( input[i] != input[input.size()-1-i] )
+    if( input[i] != input[input.size()-1-i] && input[i] != ' ' && input[input.size()-1-i] != ' ')
       return false;
   }
   return true;
